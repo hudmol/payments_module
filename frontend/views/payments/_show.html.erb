@@ -1,0 +1,16 @@
+<%
+   section_id = "payments" if section_id.blank?
+%>
+<section id="<%= section_id %>" class="subrecord-form-dummy">
+
+  <h3><%= I18n.t("payment._plural") %></h3>
+
+  <div class="subrecord-form-container">
+    <% payments.each do |payment| %>
+        <div class="subrecord-form-fields">
+          <%= read_only_view(payment, :label_css => "span4") %>
+        </div>
+    <% end %>
+  </div>
+
+</section>

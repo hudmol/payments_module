@@ -1,0 +1,10 @@
+<% define_template "payment", jsonmodel_definition(:payment) do |form| %>
+  <div class="subrecord-form-fields">
+    <%= form.label_and_date("payment_date") %>
+    <%= form.label_and_textfield("invoice_number") %>
+    <%= form.label_and_select("fund_code", form.possible_options_for("fund_code", true)) %>
+    <%= form.label_and_textfield("amount") %>
+    <%= form.label_and_textfield("usd_amount") %>
+    <%= form.label_and_textarea("note") %>
+  </div>
+<% end %>

@@ -1,0 +1,4 @@
+parents:
+  accession:
+    name: payment_summaries
+    cardinality: zero_to_many
