@@ -26,6 +26,10 @@ en:
     invoice_number: Invoice Number
     note: Note
 
+  enumeration_names:
+    currency_iso_4217: Currency Codes
+    payment_fund_code: Payment Fund Code
+
   enumerations:
     payment_fund_code:
       ABC: ABC Fund Code
