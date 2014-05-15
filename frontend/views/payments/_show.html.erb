@@ -5,12 +5,25 @@
 
   <h3><%= I18n.t("payment._plural") %></h3>
 
-  <div class="subrecord-form-container">
-    <% payments.each do |payment| %>
-        <div class="subrecord-form-fields">
-          <%= read_only_view(payment, :label_css => "span4") %>
-        </div>
-    <% end %>
-  </div>
+  <%= readonly_context :payment do |readonly| %>
+
+    <div class="subrecord-form-container">
+      <% payments.each do |payment| %>
+          <div class="subrecord-form-fields">
+            <%= read_only_view(payment, :label_css => "span4") %>
+
+            <% if !payment["authorizer"].blank? %>
+              <div class="token-list">
+                <%= readonly.label_with_field(:authorizer, render_token(:object => payment,
+                                                                       :label => payment["authorizer"]["_resolved"]["title"],
+                                                                       :type => payment["authorizer"]["_resolved"]["agent_type"],
+                                                                       :uri => payment["authorizer"]["_resolved"]["uri"])) %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+
+  <% end %>
 
 </section>

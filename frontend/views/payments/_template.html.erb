@@ -6,5 +6,16 @@
     <%= form.label_and_textfield("amount") %>
     <%= form.label_and_textfield("usd_amount") %>
     <%= form.label_and_textarea("note") %>
+
+    <% form.push("authorizer", form["authorizer"] || {}) do %>
+      <%= render_aspace_partial :partial => "agents/linker",
+                                :locals => {
+                                        :form => form,
+                                        :linker_label => I18n.t("payment.authorizer"),
+                                        :optional => true,
+                                        :multiplicity => "one"
+                                } %>
+    <% end %>
+
   </div>
 <% end %>

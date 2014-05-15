@@ -25,6 +25,7 @@ en:
     usd_amount: USD Equivalent Amount
     invoice_number: Invoice Number
     note: Note
+    authorizer: Authorizer
 
   enumeration_names:
     currency_iso_4217: Currency Codes
