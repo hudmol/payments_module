@@ -10,6 +10,20 @@
       "usd_amount" => {"type" => "string"},
       "invoice_number" => {"type" => "string"},
       "note" => {"type" => "string"},
-    },
-  },
+
+      "authorizer" => {
+        "type" => "object",
+        "subtype" => "ref",
+        "ref" => {"type" => [{"type" => "JSONModel(:agent_corporate_entity) uri"},
+                             {"type" => "JSONModel(:agent_family) uri"},
+                             {"type" => "JSONModel(:agent_person) uri"},
+                             {"type" => "JSONModel(:agent_software) uri"}],
+          "ifmissing" => "error"},
+        "_resolved" => {
+          "type" => "object",
+          "readonly" => "true"
+        }
+      }
+    }
+  }
 }
