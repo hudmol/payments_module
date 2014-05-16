@@ -15,9 +15,9 @@
             <% if !payment["authorizer"].blank? %>
               <div class="token-list">
                 <%= readonly.label_with_field(:authorizer, render_token(:object => payment,
-                                                                       :label => payment["authorizer"]["_resolved"]["title"],
-                                                                       :type => payment["authorizer"]["_resolved"]["agent_type"],
-                                                                       :uri => payment["authorizer"]["_resolved"]["uri"])) %>
+                                                                       :label => payment["authorizer"].fetch("_resolved")["title"],
+                                                                       :type => payment["authorizer"].fetch("_resolved")["agent_type"],
+                                                                       :uri => payment["authorizer"].fetch("_resolved")["uri"])) %>
               </div>
             <% end %>
           </div>
