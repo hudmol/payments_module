@@ -12,7 +12,7 @@ en:
   payment_summary:
     total_price: Total Price
     currency: Currency
-    in_lot: In lot
+    in_lot: In Lot
   payment:
     _plural: Payments
     _singular: Payment
