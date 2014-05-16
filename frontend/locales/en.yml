@@ -1,10 +1,10 @@
 en:
   plugins:
     payments_module:
-      _plural: Payment Summaries
+      _plural: Payment Summary
       _singular: Payment Summary
     payment_summary:
-      _plural: Payment Summaries
+      _plural: Payment Summary
       _singular: Payment Summary
       _frontend:
         action:
