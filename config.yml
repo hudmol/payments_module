@@ -1,4 +1,4 @@
 parents:
   accession:
-    name: payment_summaries
+    name: payment_summary
     cardinality: zero_to_one

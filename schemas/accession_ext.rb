@@ -1,3 +1,3 @@
 {
-  "payment_summaries" => {"type" => "array", "items" => {"type" => "JSONModel(:payment_summary) object"}},
+  "payment_summary" => {"type" => "JSONModel(:payment_summary) object"},
 }

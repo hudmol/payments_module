@@ -17,9 +17,9 @@ describe "Payments module" do
   end
 
   it "supports creating an accession with some payments" do
-    acc = create_accession(:payment_summaries => [original_summary])
+    acc = create_accession(:payment_summary => original_summary)
 
-    summary = Accession.to_jsonmodel(acc.id)['payment_summaries'].first
+    summary = Accession.to_jsonmodel(acc.id)['payment_summary']
 
     summary['total_price'].should eq(original_summary['total_price'])
 
@@ -39,9 +39,9 @@ describe "Payments module" do
 
     original_summary['payments'] = [payment]
 
-    acc = create_accession(:payment_summaries => [original_summary])
+    acc = create_accession(:payment_summary => original_summary)
 
-    summary = Accession.to_jsonmodel(acc.id)['payment_summaries'].first
+    summary = Accession.to_jsonmodel(acc.id)['payment_summary']
     payment = summary['payments'].first
 
     payment['authorizer']['ref'].should eq(authorizer.uri)

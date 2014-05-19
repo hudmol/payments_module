@@ -1,16 +1,14 @@
 <%
-   section_id = "payment_summaries" if section_id.blank?
+   section_id = "payment_summary" if section_id.blank?
 %>
 <section id="<%= section_id %>" class="subrecord-form-dummy">
   <h3><%= I18n.t("plugins.payment_summary._plural") %></h3>
   <div class="subrecord-form-container">
-  <% payment_summaries.each do |payment_summary| %>
     <div class="subrecord-form-fields">
       <%= read_only_view(payment_summary, :label_css => "span4") %>
       <% if payment_summary["payments"].length > 0 %>
         <%= render :partial => "payments/show", :locals => {:payments => payment_summary["payments"]} %>
       <% end %>
     </div>
-  <% end %>
   </div>
 </section>
