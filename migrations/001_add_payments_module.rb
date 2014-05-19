@@ -1,3 +1,5 @@
+require 'db/migrations/utils'
+
 Sequel.migration do
 
   up do
@@ -62,7 +64,7 @@ Sequel.migration do
     "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XOF", "XPD", "XPF", "XPT",
     "XSU", "XTS", "XUA", "XXX", "YER", "ZAR", "ZMW", "ZWL"], "USD")
 
-    create_editable_enum("payment_fund_code", ["WING"])
+    create_editable_enum("payment_fund_code", [])
 
 
 

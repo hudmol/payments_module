@@ -33,7 +33,7 @@ en:
 
   enumerations:
     payment_fund_code:
-      "WING": "WING"
+      aspace_payments_module_placeholder: Placeholder
     currency_iso_4217:
       AED: AED - UAE Dirham
       AFN: AFN - Afghani
