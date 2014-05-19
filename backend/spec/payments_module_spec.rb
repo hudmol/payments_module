@@ -5,6 +5,17 @@ describe "Payments module" do
 
   let (:original_summary) { build(:json_payment_summary).to_hash }
 
+  before(:all) do
+    enum_id = Enumeration[:name => "payment_fund_code"].id
+
+    unless EnumerationValue[:enumeration_id => enum_id,
+                            :value => "TEST"]
+      EnumerationValue.create(:enumeration_id => enum_id,
+                              :value => "TEST",
+                              :readonly => 0)
+    end
+  end
+
   it "supports creating an accession with some payments" do
     acc = create_accession(:payment_summaries => [original_summary])
 

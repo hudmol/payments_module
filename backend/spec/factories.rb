@@ -4,7 +4,7 @@ FactoryGirl.define do
 
   factory :json_payment, class: JSONModel(:payment) do
     payment_date { generate(:yyyy_mm_dd) }
-    fund_code { "WING" }
+    fund_code { "TEST" }
     amount { generate(:number) }
     usd_amount { generate(:number) }
     invoice_number { generate(:number) }

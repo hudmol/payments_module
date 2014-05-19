@@ -25,7 +25,8 @@ end
 Sequel.migration do
 
   up do
-    $stderr.puts <<EOF
+    if !defined?(ASpaceEnvironment) || ASpaceEnvironment.environment == :production
+      $stderr.puts <<EOF
 
 You seem to be setting up the ArchivesSpace payment module for the first time.
 
@@ -45,45 +46,46 @@ interface.
 
 EOF
 
-    while true
-      $stderr.puts "Enter a full path of a TSV file to load (or blank to skip): "
-      $stderr.flush
-      file = $stdin.readline.to_s.strip
+      while true
+        $stderr.puts "Enter a full path of a TSV file to load (or blank to skip): "
+        $stderr.flush
+        file = $stdin.readline.to_s.strip
 
-      break if file.empty?
+        break if file.empty?
 
-      begin
-        fund_codes = []
+        begin
+          fund_codes = []
 
-        self.transaction do
-          CSV.foreach(file, :col_sep => "\t") do |row|
-            (code, description) = row.map {|s| s.to_s.strip}
+          self.transaction do
+            CSV.foreach(file, :col_sep => "\t") do |row|
+              (code, description) = row.map {|s| s.to_s.strip}
 
-            # Empty line
-            next if code.nil?
+              # Empty line
+              next if code.nil?
 
-            if description.to_s.empty?
-              raise "Missing description for code: #{code}"
+              if description.to_s.empty?
+                raise "Missing description for code: #{code}"
+              end
+
+              fund_codes << {:code => code, :description => description}
             end
 
-            fund_codes << {:code => code, :description => description}
+            enum_id = self[:enumeration][:name => 'payment_fund_code'][:id]
+            fund_codes.each do |fund_code|
+              self[:enumeration_value].insert(:enumeration_id => enum_id,
+                                              :value => fund_code[:code],
+                                              :readonly => 0)
+            end
+
+            write_fund_translations(File.join(File.dirname(__FILE__), '../frontend/locales/en.yml'),
+                                    fund_codes)
           end
 
-          enum_id = self[:enumeration][:name => 'payment_fund_code'][:id]
-          fund_codes.each do |fund_code|
-            self[:enumeration_value].insert(:enumeration_id => enum_id,
-                                            :value => fund_code[:code],
-                                            :readonly => 0)
-          end
-
-          write_fund_translations(File.join(File.dirname(__FILE__), '../frontend/locales/en.yml'),
-                                  fund_codes)
+          break
+        rescue
+          $stderr.puts "File '#{file}' doesn't exist or couldn't be opened: #{$!}"
+          sleep 1
         end
-
-        break
-      rescue
-        $stderr.puts "File '#{file}' doesn't exist or couldn't be opened: #{$!}"
-        sleep 1
       end
     end
   end
