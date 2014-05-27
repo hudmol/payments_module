@@ -32,6 +32,8 @@ en:
     payment_fund_code: Payment Fund Code
 
   advanced_search:
+    text:
+      payment_authorizers: Payment Authorizer
     enum:
       payment_fund_code: Fund Code
 
