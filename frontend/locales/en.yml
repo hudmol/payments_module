@@ -31,6 +31,10 @@ en:
     currency_iso_4217: Currency Codes
     payment_fund_code: Payment Fund Code
 
+  advanced_search:
+    enum:
+      payment_fund_code: Fund Code
+
   enumerations:
     payment_fund_code:
       aspace_payments_module_placeholder: Placeholder
