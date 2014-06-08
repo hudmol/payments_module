@@ -5,8 +5,6 @@
     <%= form.label_and_select("fund_code", form.possible_options_for("fund_code", true)) %>
     <%= form.label_and_textfield("amount") %>
     <%= form.label_and_textfield("usd_amount") %>
-    <%= form.label_and_textarea("note") %>
-
     <% form.push("authorizer", form["authorizer"] || {}) do %>
       <%= render_aspace_partial :partial => "agents/linker",
                                 :locals => {
@@ -17,5 +15,6 @@
                                 } %>
     <% end %>
 
+    <%= form.label_and_textarea("note") %>
   </div>
 <% end %>
