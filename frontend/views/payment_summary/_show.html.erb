@@ -5,7 +5,7 @@
   <h3><%= I18n.t("plugins.payment_summary._plural") %></h3>
   <div class="subrecord-form-container">
     <div class="subrecord-form-fields">
-      <%= read_only_view(payment_summary, :label_css => "span4") %>
+      <%= read_only_view(payment_summary, :label_css => "col-md-4") %>
       <% if payment_summary["payments"].length > 0 %>
         <%= render :partial => "payments/show", :locals => {:payments => payment_summary["payments"]} %>
       <% end %>
