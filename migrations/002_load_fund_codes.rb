@@ -71,9 +71,10 @@ EOF
             end
 
             enum_id = self[:enumeration][:name => 'payment_fund_code'][:id]
-            fund_codes.each do |fund_code|
+            fund_codes.each_with_index do |fund_code, i|
               self[:enumeration_value].insert(:enumeration_id => enum_id,
                                               :value => fund_code[:code],
+                                              :position => i,
                                               :readonly => 0)
             end
 
