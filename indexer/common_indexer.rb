@@ -17,6 +17,8 @@ class CommonIndexer
           doc['payment_date_u_udate'] = payment_dates.map {|date|
             date + 'T00:00:00Z'
           }
+
+          doc["fund_code_enum_s"] = summary['payments'].map{|payment| payment["fund_code"]}.compact
         end
       }
     end
