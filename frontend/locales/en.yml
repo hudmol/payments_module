@@ -39,6 +39,8 @@ en:
       payment_date: Payment Date
     enum:
       payment_fund_code: Fund Code
+    boolean:
+      payment_in_lot: In Lot?
 
   enumerations:
     payment_fund_code:

@@ -19,6 +19,8 @@ class CommonIndexer
           }
 
           doc["fund_code_enum_s"] = summary['payments'].map{|payment| payment["fund_code"]}.compact
+
+          doc['payment_in_lot_u_ubool'] = summary['in_lot']
         end
       }
     end
