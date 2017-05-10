@@ -14,7 +14,7 @@
             <%= readonly.label_and_textfield "invoice_number" %>
             <%= readonly.label_and_textfield "amount" %>
             <%= readonly.label_and_textfield "payment_date" %>
-            <%= readonly.label_and_textfield "fund_code" %>
+            <%= readonly.label_with_field('fund_code', readonly.textfield('fund_code', I18n.t('enumerations.payment_fund_code.' + payment['fund_code']), {}), {}) %>
             <%= readonly.label_and_textfield "usd_amount" %>
 
             <% if !payment["authorizer"].blank? %>
