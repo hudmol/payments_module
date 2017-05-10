@@ -1,4 +1,4 @@
-require_relative '../../../../backend/spec/spec_helper'
+require 'spec_helper'
 require_relative 'factories'
 
 describe "Payments module" do
