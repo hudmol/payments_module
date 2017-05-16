@@ -7,7 +7,7 @@
     <div class="subrecord-form-fields">
 
       <%= readonly_context(:payment_summary, payment_summary) do |readonly| %>
-        <%= readonly.label_with_field('total_price', readonly.textfield('total_price', number_to_currency(payment_summary['total_price']), {})) %>
+        <%= readonly.label_with_field('total_price', readonly.textfield('total_price', CurrencyFormatter.number_to_currency(payment_summary['total_price']), {})) %>
         <%= readonly.label_and_textfield("currency") %>
         <%= readonly.label_and_boolean("in_lot") %>
       <% end %>

@@ -14,17 +14,17 @@
             <%= readonly.label_and_textfield "invoice_number" %>
 
             <% if payment['amount'] %>
-              <%= readonly.label_with_field('amount', readonly.textfield('amount', number_to_currency(payment['amount']), {})) %>
+                <%= readonly.label_with_field('amount', readonly.textfield('amount', CurrencyFormatter.number_to_currency(payment['amount']), {})) %>
             <% end %>
 
             <%= readonly.label_and_textfield "payment_date" %>
 
             <% if payment['fund_code'] %>
-            <%= readonly.label_with_field('fund_code', readonly.textfield('fund_code', I18n.t('enumerations.payment_fund_code.' + payment['fund_code']), {}), {}) %>
+                <%= readonly.label_with_field('fund_code', readonly.textfield('fund_code', I18n.t('enumerations.payment_fund_code.' + payment['fund_code']), {}), {}) %>
             <% end %>
 
             <% if payment['usd_amount'] %>
-              <%= readonly.label_with_field('usd_amount', readonly.textfield('usd_amount', number_to_currency(payment['usd_amount']), {})) %>
+                <%= readonly.label_with_field('usd_amount', readonly.textfield('usd_amount', CurrencyFormatter.number_to_currency(payment['usd_amount']), {})) %>
             <% end %>
 
             <% if !payment["authorizer"].blank? %>
