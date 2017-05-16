@@ -14,7 +14,7 @@ Sequel.migration do
           id = row[:id]
           value = row[column]
 
-          unless value =~ /\A[0-9]+\z/ || value =~ /\A[0-9]+\.[0-9]{1,2}\z/
+          unless value.nil? || value =~ /\A[0-9]+\z/ || value =~ /\A[0-9]+\.[0-9]{1,2}\z/
             invalid_values << {:table => table, :column => column, :id => id, :value => value}
           end
         end
