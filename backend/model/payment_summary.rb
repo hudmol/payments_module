@@ -20,6 +20,10 @@ class PaymentSummary < Sequel::Model(:payment_summary)
   end
 
 
+  def self.update_toplevel_mtimes(*)
+    # Just here as a bugfix for versions 2.0.0 -- 2.0.1.
+  end
+
   def self.sequel_to_jsonmodel(objs, opts = {})
     jsons = super
 
