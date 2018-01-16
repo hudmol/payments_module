@@ -1,4 +1,4 @@
-class CommonIndexer
+class IndexerCommon
 
   self.add_indexer_initialize_hook do |indexer|
     if AppConfig[:plugins].include?('payments_module')
