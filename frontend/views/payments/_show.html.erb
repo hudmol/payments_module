@@ -20,7 +20,7 @@
             <%= readonly.label_and_textfield "payment_date" %>
 
             <% if payment['fund_code'] %>
-                <%= readonly.label_with_field('fund_code', readonly.textfield('fund_code', I18n.t('enumerations.payment_fund_code.' + payment['fund_code']), {}), {}) %>
+                <%= readonly.label_with_field('fund_code', readonly.textfield('fund_code', I18n.t('enumerations.payment_fund_code.' + payment['fund_code'], payment['fund_code']), {}), {}) %>
             <% end %>
 
             <% if payment['usd_amount'] %>
