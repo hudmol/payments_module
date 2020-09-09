@@ -231,19 +231,19 @@ en:
       ZMW: ZMW - Zambian Kwacha
       ZWL: ZWL - Zimbabwe Dollar
     payments_module_cost_center:
-      CC0681: Foo - CC0681
-      CC0682: Foo - CC0682
-      CC0683: Foo - CC0683
-      CC0684: Foo - CC0684
-      CC0685: Foo - CC0685
-      CC0686: Miles - CC0686
-      CC0687: Foo - CC0687
-      CC0688: Foo - CC0688
+      CC0681: ASSOC-DIREC - CC0681
+      CC0682: YCAL-POET - CC0682
+      CC0683: YCAL-DRPR - CC0683
+      CC0684: GENE - CC0684
+      CC0685: GENEM-OSB - CC0685
+      CC0686: GENAM-WA - CC0686
+      CC0687: GENM-ENG - CC0687
+      CC0688: GENM-EUR - CC0688
     payments_module_spend_category:
       SC121: Rare Archives - SC121
-      SC120: Foo - SC120
-      SC122: Foo - SC122
-      SC670: Foo - SC670
-      SC118: Foo - SC118
-      SC669: Foo - SC669
-      SC119: Foo - SC119
+      SC120: Rare Graphic Mat - SC120
+      SC122: Rare Manuscripts - SC122
+      SC670: Rare Maps - SC670
+      SC118: Rare Monographs - SC118
+      SC669: Rare Serials - SC669
+      SC119: Rare Unlisted - SC119
