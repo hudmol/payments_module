@@ -17,15 +17,11 @@
                 <%= readonly.label_with_field('amount', readonly.textfield('amount', CurrencyFormatter.number_to_currency(payment['amount']), {})) %>
             <% end %>
 
-            <%= readonly.label_and_textfield "payment_date" %>
-
             <% if payment['fund_code'] %>
                 <%= readonly.label_with_field('fund_code', readonly.textfield('fund_code', I18n.t('enumerations.payment_fund_code.' + payment['fund_code'], payment['fund_code']), {}), {}) %>
             <% end %>
 
-            <% if payment['usd_amount'] %>
-                <%= readonly.label_with_field('usd_amount', readonly.textfield('usd_amount', CurrencyFormatter.number_to_currency(payment['usd_amount']), {})) %>
-            <% end %>
+            <%= readonly.label_with_field("cost_center", readonly.textfield('cost_center', I18n.t('enumerations.payments_module_cost_center.' + payment['cost_center'], payment['cost_center']), {}), {}) %>
 
             <% if !payment["authorizer"].blank? %>
               <div class="token-list">
@@ -36,12 +32,17 @@
               </div>
             <% end %>
 
-            <%= readonly.label_and_textfield "note" %>
-
-            <%= readonly.label_with_field("cost_center", readonly.textfield('cost_center', I18n.t('enumerations.payments_module_cost_center.' + payment['cost_center'], payment['cost_center']), {}), {}) %>
+            <%= readonly.label_and_textfield "payment_date" %>
 
             <%= readonly.label_and_boolean "ok_to_pay" %>
+
             <%= readonly.label_and_textfield "date_paid" %>
+
+            <% if payment['usd_amount'] %>
+                <%= readonly.label_with_field('usd_amount', readonly.textfield('usd_amount', CurrencyFormatter.number_to_currency(payment['usd_amount']), {})) %>
+            <% end %>
+
+            <%= readonly.label_and_textfield "note" %>
           </div>
       <% end %>
     </div>
