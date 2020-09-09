@@ -39,7 +39,6 @@
             <%= readonly.label_and_textfield "note" %>
 
             <%= readonly.label_with_field("cost_center", readonly.textfield('cost_center', I18n.t('enumerations.payments_module_cost_center.' + payment['cost_center'], payment['cost_center']), {}), {}) %>
-            <%= readonly.label_with_field("spend_category", readonly.textfield('spend_category', I18n.t('enumerations.payments_module_spend_category.' + payment['spend_category'], payment['spend_category']), {}), {}) %>
 
             <%= readonly.label_and_boolean "ok_to_pay" %>
             <%= readonly.label_and_textfield "date_paid" %>

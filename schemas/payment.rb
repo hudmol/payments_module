@@ -30,7 +30,6 @@
       "date_paid" => {"type" => "date"},
       "ok_to_pay" => {"type" => "boolean"},
       "cost_center" => {"type" => "string", "dynamic_enum" => "payments_module_cost_center"},
-      "spend_category" => {"type" => "string", "dynamic_enum" => "payments_module_spend_category"},
     }
   }
 }
