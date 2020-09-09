@@ -1,4 +1,12 @@
 en:
+  agent_person:
+    vendor_code: Vendor Code
+  agent_corporate_entity:
+    vendor_code: Vendor Code
+  agent_family:
+    vendor_code: Vendor Code
+  agent_software:
+    vendor_code: Vendor Code
   plugins:
     payments_module:
       _plural: Payment Summary
