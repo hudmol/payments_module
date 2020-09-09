@@ -20,7 +20,7 @@ en:
     _frontend:
       action:
         add: Add Payment
-    payment_date: Payment Date
+    payment_date: Date to be paid
     fund_code: Fund Code
     amount: Amount
     usd_amount: USD Equivalent Amount
