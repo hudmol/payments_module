@@ -35,6 +35,8 @@ en:
   enumeration_names:
     currency_iso_4217: Currency Codes
     payment_fund_code: Payment Fund Code
+    payments_module_cost_center: Payment Cost Center
+    payments_module_spend_category: Payment Spend Category
 
   advanced_search:
     text:
