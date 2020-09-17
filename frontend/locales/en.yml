@@ -1,4 +1,6 @@
 en:
+  agent:
+    vendor_code: Vendor Code
   agent_person:
     vendor_code: Vendor Code
   agent_corporate_entity:
