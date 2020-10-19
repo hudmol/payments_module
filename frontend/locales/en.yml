@@ -9,6 +9,8 @@ en:
     vendor_code: Vendor Code
   agent_software:
     vendor_code: Vendor Code
+  validation_errors:
+    vendor_code_already_in_use: Already in use. Must be unique.
   plugins:
     payments_module:
       _plural: Payment Summary
