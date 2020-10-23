@@ -8,7 +8,7 @@ module VendorCode
     validates_unique(:vendor_code, :message => "Vendor Code already in use")
 
     # we need to enforce uniqueness across the different agent models
-    if self.vendor_code.strip
+    unless self.vendor_code.to_s.strip.empty?
       [AgentPerson, AgentCorporateEntity, AgentFamily, AgentSoftware].each do |model|
         next if model == self.class
 
