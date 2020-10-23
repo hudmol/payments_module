@@ -42,7 +42,7 @@ en:
     cost_center: Cost Center
     spend_category: Spend Category
     ok_to_pay: OK to Pay?
-    date_paid: Date Paid
+    date_paid: Date to Voyager
 
   enumeration_names:
     currency_iso_4217: Currency Codes
