@@ -11,6 +11,7 @@ en:
     vendor_code: Vendor Code
   validation_errors:
     vendor_code_already_in_use: Already in use. Must be unique.
+    vendor_code_can_only_be_changed_by_administrators: Can only be changed by Administrators
   plugins:
     payments_module:
       _plural: Payment Summary
