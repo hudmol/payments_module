@@ -251,14 +251,15 @@ en:
       CC0683: YCAL-DRPR - CC0683
       CC0684: GENE - CC0684
       CC0685: GENEM-OSB - CC0685
+      CC1897: GENAM - CC1897
       CC0686: GENAM-WA - CC0686
       CC0687: GENM-ENG - CC0687
       CC0688: GENM-EUR - CC0688
     payments_module_spend_category:
-      SC121: Rare Archives - SC121
-      SC120: Rare Graphic Mat - SC120
-      SC122: Rare Manuscripts - SC122
-      SC670: Rare Maps - SC670
-      SC118: Rare Monographs - SC118
-      SC669: Rare Serials - SC669
-      SC119: Rare Unlisted - SC119
+      "351": "Rare Monographs - 351"
+      "352": "Rare Serials - 352"
+      "353": "Rare Graphic Mat - 353"
+      "356": "Rare Archives - 356"
+      "358": "Rare Maps - 358"
+      "359": "Rare Manuscripts - 359"
+      "369": "Rare Unlisted - 369"
